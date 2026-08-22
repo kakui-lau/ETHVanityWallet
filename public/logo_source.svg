@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1024" height="1024" viewBox="0 0 128 128" fill="none">
+  <defs>
+    <linearGradient id="lg0" x1="6" y1="24" x2="74" y2="104" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#10f0c8"/>
+      <stop offset="0.32" stop-color="#2dd4bf"/>
+      <stop offset="0.58" stop-color="#60a5fa"/>
+      <stop offset="0.82" stop-color="#a855f7"/>
+      <stop offset="1" stop-color="#e879f9"/>
+    </linearGradient>
+    <linearGradient id="lg1" x1="74" y1="36" x2="118" y2="108" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#22d3ee"/>
+      <stop offset="0.34" stop-color="#60a5fa"/>
+      <stop offset="0.66" stop-color="#a855f7"/>
+      <stop offset="1" stop-color="#ec4899"/>
+    </linearGradient>
+    <radialGradient id="glow0" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#34d399" stop-opacity="0.35"/>
+      <stop offset="1" stop-color="#34d399" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="glow1" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#c084fc" stop-opacity="0.32"/>
+      <stop offset="1" stop-color="#c084fc" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="spark" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#e9d5ff" stop-opacity="0.6"/>
+      <stop offset="1" stop-color="#e9d5ff" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <ellipse cx="38" cy="78" rx="54" ry="46" fill="url(#glow0)"/>
+  <ellipse cx="90" cy="72" rx="46" ry="40" fill="url(#glow1)"/>
+  <circle cx="84" cy="50" r="10" fill="url(#spark)"/>
+  <g fill="#ffffff" fill-opacity="0.18">
+    <circle cx="14" cy="18" r="0.9"/>
+    <circle cx="106" cy="18" r="0.9"/>
+    <circle cx="22" cy="112" r="0.8"/>
+    <circle cx="110" cy="114" r="0.8"/>
+    <circle cx="8" cy="70" r="0.7"/>
+    <circle cx="120" cy="70" r="0.7"/>
+  </g>
+  <g stroke="url(#lg0)" stroke-width="1.8" stroke-linejoin="round" stroke-linecap="round">
+    <path d="M38 20 L70 58 L38 104 L6 58 Z"/>
+    <path d="M38 20 L38 104"/>
+    <path d="M6 58 L70 58"/>
+    <path d="M38 104 L58 92 M38 104 L18 92"/>
+  </g>
+  <g stroke="url(#lg1)" stroke-width="1.8" stroke-linejoin="round" stroke-linecap="round">
+    <path d="M58 44 H108 C115.732 44 122 50.268 122 58 V96 C122 103.732 115.732 110 108 110 H58 C50.268 110 44 103.732 44 96 V58 C44 50.268 50.268 44 58 44 Z"/>
+    <rect x="90" y="68" width="24" height="24" rx="4" ry="4"/>
+    <circle cx="102" cy="80" r="2.6" fill="none" stroke="url(#lg1)" stroke-width="1.8"/>
+  </g>
+  <g stroke="url(#lg1)" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round">
+    <path d="M72 30 L78 22 L84 30 L81 38 L75 38 Z"/>
+    <path d="M75 30 L81 30 M78 30 L78 38 M72 30 L78 38 M84 30 L78 38"/>
+  </g>
+  <g stroke="url(#lg0)" stroke-width="1.8" stroke-linecap="round" opacity="0.95">
+    <line x1="54" y1="42" x2="64" y2="42"/>
+  </g>
+</svg>

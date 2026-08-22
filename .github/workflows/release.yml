@@ -1,0 +1,61 @@
+name: Release
+
+on:
+  push:
+    tags:
+      - "v*"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    name: Build ${{ matrix.platform }}
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - platform: macOS
+            os: macos-latest
+          - platform: Windows
+            os: windows-latest
+
+    runs-on: ${{ matrix.os }}
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Setup Rust
+        uses: dtolnay/rust-toolchain@stable
+
+      - name: Install frontend dependencies
+        run: npm ci
+
+      - name: Generate application icons
+        run: npm run gen:icons
+
+      - name: Build and upload release assets
+        uses: tauri-apps/tauri-action@v0
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          VITE_SENTRY_DSN: ${{ secrets.VITE_SENTRY_DSN }}
+          VITE_SENTRY_ENABLED: ${{ vars.VITE_SENTRY_ENABLED || 'false' }}
+          VITE_SENTRY_ENVIRONMENT: production
+          VITE_SENTRY_RELEASE: eth-vanity-wallet@${{ github.ref_name }}
+        with:
+          tagName: ${{ github.ref_name }}
+          releaseName: ETH Vanity Wallet ${{ github.ref_name }}
+          releaseBody: |
+            Desktop release assets for macOS and Windows.
+
+            Sentry is disabled unless `VITE_SENTRY_DSN` and `VITE_SENTRY_ENABLED=true` are configured for the build.
+          releaseDraft: false
+          prerelease: false
