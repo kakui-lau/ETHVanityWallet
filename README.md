@@ -8,10 +8,6 @@ The product is designed for users who want custom Ethereum address patterns whil
 
 ## Product Preview
 
-### Dashboard
-
-![ETH Vanity Wallet Dashboard](docs/screenshots/dashboard.png)
-
 ### Create Task
 
 ![ETH Vanity Wallet Create Task](docs/screenshots/new-task.png)
